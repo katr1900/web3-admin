@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <title>CV administration</title>
+</head>
+<body>
+    <div class="wrapper">
+
+    <h1>CV administration</h1>
+        <h2 class="text">Personal information</h2>
+        <form id="personal-info-form" class="info">
+            <input type="hidden" name="id">
+            <label>
+                Firstname:
+            </label>
+            <input type="text" name="firstname">
+            <label>
+                Lastname:
+            </label>
+            <input type="text" name="lastname">
+            <label>
+                Phone:
+            </label>
+            <input type="phone" name="phone">
+            <label>
+                E-mail:
+            </label>
+            <input type="email" name="email">
+            <label>
+                Linkedin:
+            </label>
+            <input type="text" name="linkedin">
+            <label>
+            Driving license:
+            </label>
+            <input type="text" name="drivinglicense">
+            <label>
+                About me:
+                </label>
+                <textarea name="about"></textarea>
+        <button class="btn">Save</button>
+    </form>
+
+    <h2>Languages</h2>
+    <form id="languages-form">
+        <table id="languages-table" class="languages">
+
+        </table>
+        <label>
+            Name:
+            <input type="text" name="name">
+        </label>
+        <label class="value">
+            Level:
+            <select name="level">
+                <option value="1">1</option>
+                <option value="2">1</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+        </label>
+        <button class="btn">Save</button>
+    </form>
+
+    <h2>Skills</h2>
+    <form id="skills-form">
+        <table id="skills-table" class="skill">
+
+        </table>
+        <label>
+            Name:
+            <input type="text" name="name">
+        </label>
+        <label>
+            Level:
+            <select name="level">
+                <option value="1">1</option>
+                <option value="2">1</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+        </label>
+        <button class="btn">Save</button>
+    </form>
+
+    <h2>Interests</h2>
+    <form id="interests-form">
+        <table id="interests-table" class="interest">
+
+        </table>
+        <label>
+            Name:
+            <input type="text" name="name">
+        </label>
+        <button class="btn">Save</button>
+    </form>
+
+    <h2>Education</h2>
+    <form id="educations-form">
+        <table id="educations-table" class="education" class="course">
+            <tr>
+                <th>
+                    <h3>Course</h3>
+                </th>
+                <th>
+                    <h3>School</h3>
+                </th>
+                <th>
+                    <h3>Start date</h3>
+                </th>
+                <th>
+                    <h3>End date</h3>
+                </th>
+            </tr>
+        </table>
+        <input type="hidden" name="id">
+        <label>
+            Course:
+            <input type="text" name="course">
+        </label>
+        <label>
+            School:
+            <input type="text" name="school">
+        </label>
+        <label>
+        <label>
+            Start date:
+            <input type="date" name="startdate">
+        </label>
+        <label>
+            End date:
+            <input type="date" name="enddate">
+        </label>
+        <button class="btn">Save</button>
+    </form>
+
+    <h2>Interests</h2>
+    <form id="interests-form">
+        <table id="interests-table">
+
+        </table>
+        <label>
+            Name:
+            <input type="text" name="name">
+        </label>
+        <button class="btn">Save</button>
+    </form>
+
+    <h2>Experience</h2>
+    <form id="experiences-form">
+        <table id="experiences-table" class="experience">
+            <tr>
+                <th>
+                    <h3>Role</h3>
+                </th>
+                <th>
+                    <h3>Employeer</h3>
+                </th>
+                <th>
+                    <h3>Startdate</h3>
+                </th>
+                <th>
+                    <h3>End date</h3>
+                </th>
+            </tr>
+        </table>
+        <input type="hidden" name="id">
+        <label>
+            Role:
+            <input type="text" name="role">
+        </label>
+        <label>
+            Employeer:
+            <input type="text" name="employeer">
+        </label>
+            <label>
+                Start date:
+                <input type="date" name="startdate">
+            </label>
+            <label>
+                End date:
+                <input type="date" name="enddate">
+            </label>
+            <button class="btn">Save</button>
+        
+    </form>
+
+    <h2>References</h2>
+    <form id="references-form">
+        <table id="references-table" class="experience">
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Phone
+                </th>
+            </tr>
+        </table>
+        <label>
+            Name:
+            <input type="text" name="name">
+        </label>
+        <label>
+            Phone number
+            <input type="number" name="phone">
+        </label>
+        <label>
+            <button class="btn">Save</button>
+        </label>
+    </form>
+</div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
