@@ -102,6 +102,43 @@ function setSkills(skills) {
         const level = document.createElement("td");
         level.textContent = skill.level;
         tr.appendChild(level);
+
+        const del = document.createElement("td");
+        const deleteButton = document.createElement("button");
+        deleteButton.innerText = "Delete";
+        deleteButton.setAttribute("data-id", skill.id);
+        // Handle click on the delete button
+        deleteButton.addEventListener("click", (e) => {
+            e.preventDefault(); // Stop the submit
+            const btn = e.target;
+            console.log("delete", e.target)
+
+            const skill = {
+                id: btn.dataset.id // get the id
+            };
+        
+            const request = {
+                skill
+            };
+          
+            fetch(serviceUrl, {
+              method: "DELETE",
+              mode: "cors",
+              credentials: "omit",
+              headers: {
+                "Content-Type": "application/json; charset=UTF-8",
+              },
+              body: JSON.stringify(request),
+            })
+            .then(() => {
+              location.reload(); // Reload the page
+            })
+            .catch((error) => {
+              console.error('Error:', error);
+            });
+        });
+        del.appendChild(deleteButton);
+        tr.appendChild(del);
   
         table.appendChild(tr);
       });

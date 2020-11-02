@@ -96,7 +96,7 @@ document.getElementById("personal-info-form").addEventListener("submit", (e) => 
     });
   });
 
-  document.getElementById("skills-form").addEventListener("submit", (e) => {
+  document.getElementById("skills-form-submit").addEventListener("click", (e) => {
     e.preventDefault(); // Stop the submit
     const form = document.getElementById("skills-form");
 
