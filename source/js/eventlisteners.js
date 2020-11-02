@@ -1,5 +1,6 @@
+// This file sets up event listeners for the form submits 
 document.getElementById("personal-info-form").addEventListener("submit", (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Stop the submit
     const form = document.getElementById("personal-info-form");
 
     const personalInfo = {
@@ -17,7 +18,7 @@ document.getElementById("personal-info-form").addEventListener("submit", (e) => 
     };
   
     fetch(serviceUrl, {
-      method: "POST",
+      method: "PUT",
       mode: "cors",
       credentials: "omit",
       headers: {
@@ -26,7 +27,39 @@ document.getElementById("personal-info-form").addEventListener("submit", (e) => 
       body: JSON.stringify(request),
     })
     .then(() => {
-      location.reload();
+      location.reload(); // Reload the page
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  });
+
+  document.getElementById("address-form").addEventListener("submit", (e) => {
+    e.preventDefault(); // Stop the submit
+    const form = document.getElementById("address-form");
+
+    const address = {
+        id: form.querySelector("[name='id']").value,
+        street: form.querySelector("[name='street']").value,
+        zip: form.querySelector("[name='zip']").value,
+        city: form.querySelector("[name='city']").value,
+        country: form.querySelector("[name='country']").value,
+    };
+    const request = {
+        address
+    };
+  
+    fetch(serviceUrl, {
+      method: "PUT",
+      mode: "cors",
+      credentials: "omit",
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+      },
+      body: JSON.stringify(request),
+    })
+    .then(() => {
+      location.reload(); // Reload the page
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -34,7 +67,7 @@ document.getElementById("personal-info-form").addEventListener("submit", (e) => 
   });
 
   document.getElementById("languages-form").addEventListener("submit", (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Stop the submit
     const form = document.getElementById("languages-form");
 
     const language = {
@@ -56,7 +89,7 @@ document.getElementById("personal-info-form").addEventListener("submit", (e) => 
       body: JSON.stringify(request),
     })
     .then(() => {
-      location.reload();
+      location.reload(); // Reload the page
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -64,7 +97,7 @@ document.getElementById("personal-info-form").addEventListener("submit", (e) => 
   });
 
   document.getElementById("skills-form").addEventListener("submit", (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Stop the submit
     const form = document.getElementById("skills-form");
 
     const skill = {
@@ -86,7 +119,7 @@ document.getElementById("personal-info-form").addEventListener("submit", (e) => 
       body: JSON.stringify(request),
     })
     .then(() => {
-      location.reload();
+      location.reload(); // Reload the page
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -94,7 +127,7 @@ document.getElementById("personal-info-form").addEventListener("submit", (e) => 
   });
 
   document.getElementById("interests-form").addEventListener("submit", (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Stop the submit
     const form = document.getElementById("interests-form");
 
     const interest = {
@@ -115,7 +148,7 @@ document.getElementById("personal-info-form").addEventListener("submit", (e) => 
       body: JSON.stringify(request),
     })
     .then(() => {
-      location.reload();
+      location.reload(); // Reload the page
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -123,7 +156,7 @@ document.getElementById("personal-info-form").addEventListener("submit", (e) => 
   });
 
   document.getElementById("educations-form").addEventListener("submit", (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Stop the submit
     const form = document.getElementById("educations-form");
 
     const education = {
@@ -148,7 +181,7 @@ document.getElementById("personal-info-form").addEventListener("submit", (e) => 
       body: JSON.stringify(request),
     })
     .then(() => {
-      location.reload();
+      location.reload(); // Reload the page
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -156,7 +189,7 @@ document.getElementById("personal-info-form").addEventListener("submit", (e) => 
   });
 
   document.getElementById("experiences-form").addEventListener("submit", (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Stop the submit
     const form = document.getElementById("experiences-form");
 
     const experience = {
@@ -181,7 +214,7 @@ document.getElementById("personal-info-form").addEventListener("submit", (e) => 
       body: JSON.stringify(request),
     })
     .then(() => {
-      location.reload();
+      location.reload(); // Reload the page
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -189,7 +222,7 @@ document.getElementById("personal-info-form").addEventListener("submit", (e) => 
   });
 
   document.getElementById("references-form").addEventListener("submit", (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Stop the submit
     const form = document.getElementById("references-form");
 
     const reference = {
@@ -212,7 +245,7 @@ document.getElementById("personal-info-form").addEventListener("submit", (e) => 
       body: JSON.stringify(request),
     })
     .then(() => {
-      location.reload();
+      location.reload(); // Reload the page
     })
     .catch((error) => {
       console.error('Error:', error);

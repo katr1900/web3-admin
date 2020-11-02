@@ -8,7 +8,9 @@ function loadData() {
   credentials: "omit" })
   .then(response => response.json())
   .then(data => {
+      // Populate the form fields
       setPersonalInfo(data.personalInfo);
+      setAddress(data.address);
       setLanguages(data.languages);
       setSkills(data.skills);
       setInterests(data.interests);
@@ -48,6 +50,25 @@ function setPersonalInfo(personalInfo) {
 
     const about = form.querySelector("[name='about']");
     about.textContent = personalInfo.about;
+}
+
+function setAddress(address) {
+    const form = document.getElementById("address-form");
+
+    const id = form.querySelector("[name='id']");
+    id.value = address.id;
+
+    const street = form.querySelector("[name='street']");
+    street.value = address.street;
+
+    const zip = form.querySelector("[name='zip']");
+    zip.value = address.zip;
+
+    const city = form.querySelector("[name='city']");
+    city.value = address.city;
+
+    const country = form.querySelector("[name='country']");
+    country.value = address.country;
 }
 
 function setLanguages(languages) {
