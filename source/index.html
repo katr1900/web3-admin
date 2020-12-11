@@ -126,7 +126,7 @@
 
     <h2>Education</h2>
     <form id="educations-form">
-        <table id="educations-table" class="education" class="course">
+        <table id="educations-table">
             <tr>
                 <th>
                     <h3>Course</h3>
@@ -152,13 +152,44 @@
             <input type="text" name="school">
         </label>
         <label>
-        <label>
             Start date:
             <input type="date" name="startdate">
         </label>
         <label>
             End date:
             <input type="date" name="enddate">
+        </label>
+        <button class="btn">Save</button>
+    </form>
+
+    <h2>Websites</h2>
+    <form id="websites-form">
+        <table id="websites-table">
+            <tr>
+                <th>
+                    <h3>Title</h3>
+                </th>
+                <th>
+                    <h3>Url</h3>
+                </th>
+                <th>
+                    <h3>Description</h3>
+                </th>
+            </tr>
+        </table>
+        <input type="hidden" name="id">
+        <label>
+            Title:
+            <input type="text" name="title">
+        </label>
+        <label>
+            Url:
+            <input type="text" name="url">
+        </label>
+        <label>
+        <label>
+            Description:
+            <textarea name="description"></textarea>
         </label>
         <button class="btn">Save</button>
     </form>

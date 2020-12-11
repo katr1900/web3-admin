@@ -234,7 +234,37 @@ document.getElementById("personal-info-form").addEventListener("submit", (e) => 
         reference
     };
 
-  
+    fetch(serviceUrl, {
+      method: "POST",
+      mode: "cors",
+      credentials: "omit",
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+      },
+      body: JSON.stringify(request),
+    })
+    .then(() => {
+      location.reload(); // Reload the page
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  });
+
+  document.getElementById("websites-form").addEventListener("submit", (e) => {
+    e.preventDefault(); // Stop the submit
+    const form = document.getElementById("websites-form");
+
+    const website = {
+        title: form.querySelector("[name='title']").value,
+        url: form.querySelector("[name='url']").value,
+        description: form.querySelector("[name='description']").value,
+    };
+
+    const request = {
+        website
+    };
+
     fetch(serviceUrl, {
       method: "POST",
       mode: "cors",

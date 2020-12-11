@@ -17,6 +17,7 @@ function loadData() {
       setEducations(data.educations);
       setExperiences(data.workExperiences);
       setReferences(data.workReferences);
+      setWebsites(data.websites);
   })
   .catch((err) => {
       console.log('fetch Error :-S', err)
@@ -227,4 +228,25 @@ function setReferences(references) {
         table.appendChild(tr);
       });
 }
-  
+
+function setWebsites(websites) {
+  const table = document.getElementById("websites-table");
+
+  websites.forEach(website => {
+      const tr = document.createElement("tr");
+
+      const title = document.createElement("td");
+      title.textContent = website.title;
+      tr.appendChild(title);
+
+      const url = document.createElement("td");
+      url.textContent = website.url;
+      tr.appendChild(url);
+
+      const description = document.createElement("td");
+      description.textContent = website.description;
+      tr.appendChild(description);
+
+      table.appendChild(tr);
+    });
+}
